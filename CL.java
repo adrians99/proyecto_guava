@@ -1,8 +1,20 @@
+package com.tarea;
+
 import java.io.*;
 
 public class CL {
 	static BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
     static PrintStream out = System.out;
+
+	public CL(){
+
+
+		// 1. Cambiar nombre de las clases a nombres mas significativos, por ejemplo CL
+		// 2. Cargar los atributos en metodos separados y llamar dichos metodos en el constructor de la clase CL
+		// 3. Eliminar de las clases los metodos in.readline y buffer, utilizar estos solo en el UI para recibir entradas
+
+	}
+
 	{
 	 Medico[]  listadoMedicos = new Medico[5];
 	 Paciente[] listadoPacientes = new Paciente[10];
@@ -26,7 +38,7 @@ public class CL {
 	 listadoMedicos[1] = medico2;
 	 listadoMedicos[2] = medico3;
 	 listadoMedicos[3] = medico4;
-	 listadoMedicos[5] = medico5;
+	 listadoMedicos[4] = medico5; //Es lista medico 4, estaba en medico 5.
 	 
 	 Paciente paciente1 = new Paciente("12345", "Walter Mercado", "wmercado@gmail.com");
 	 Paciente paciente2 = new Paciente("67890", "Kim Kardashian", "kkardashian@outlook.com");
@@ -106,6 +118,11 @@ public class CL {
     		pPadecimiento[i].detallePadecimiento();
     	}
     }
+
+    public void verListadoDeCitas(){
+
+	}
+
     
 
 }

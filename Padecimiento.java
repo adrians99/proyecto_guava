@@ -1,3 +1,5 @@
+package com.tarea;
+
 import java.io.*;
 
 public class Padecimiento {

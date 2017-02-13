@@ -1,3 +1,4 @@
+package com.tarea;
 
 public class Medico {
 	private String codigo;

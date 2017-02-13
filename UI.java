@@ -1,36 +1,44 @@
+package com.tarea;
+
 import java.io.*;
+
 public class UI {
     static BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
     static PrintStream out = System.out;
     
     public static void main(String[] args)throws IOException{
-    	String opcion;
-    	boolean salir;
+    	String opcion = "";
+    	boolean salir = false;
 
-    	
-    	salir = false;
-    	while(salir == false){
+        CL clinica = new CL();
+        out.println("Bienvenido a su sistema de medicos");
+
+    	while(!salir){
     		out.println("Elija \"m\" para medico, y \"p\" para paciente:\n");
     		opcion = in.readLine();
     		
-    		if (opcion.equals("m")){
-    			opcion = menuMedico();
-    			switch(opcion){
-    			    case "1":
+    		if (opcion.equalsIgnoreCase("m")){
+    			menuMedico();
+				opcion = in.readLine();
+    			switch(Integer.parseInt(opcion)){
+    			    case 1:
     			    	opcion = menuCitas();
     			    	if(opcion.equals("1")){
-    			    		
+							clinica
     			    	}
     			    	break;
-    			    case "2":
+    			    case 2:
     			    	menuExpedientes();
     			    	break;
-    			    case "3":
+    			    case 3:
     			    	menuListaPacientes();
     			    	break;
-    			    case "4":
+    			    case 4:
     			    	menuPadecimientos();
     			    	break;
+					case 5:
+						out.println("Muchas gracias");
+						salir = true;
     			    default:
     			    	out.println("La opcion escogida es incorrecta. Intente de nuevo.\n");
     			    	break;
@@ -39,16 +47,13 @@ public class UI {
     	}
     	
     }
-    public static String menuMedico()throws IOException{
-    	String opcion;
+    public static void menuMedico()throws IOException{
     	out.println("Escoja la opcion que desee utilizar:");
-    	out.println("1.Mostrar listado de citas.\n");
-    	out.println("2.Mostrar listado de expedientes.\n");
-    	out.println("3.Mostrar listado de pacientes.\n");
-    	out.println("4.Mostrar listado de padecimientos.\n");
-    	opcion = in.readLine();
-    	
-    	return opcion;
+    	out.println("1. Mostrar listado de citas.");
+    	out.println("2. Mostrar listado de expedientes.");
+    	out.println("3. Mostrar listado de pacientes.");
+    	out.println("4. Mostrar listado de padecimientos.");
+        // /n fue removido porque println ya pone la separacion de linea
     }
     
     public static String menuPaciente()throws IOException{
